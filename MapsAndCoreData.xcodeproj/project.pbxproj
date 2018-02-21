@@ -13,6 +13,8 @@
 		91C07D2B20391107008146A1 /* MapsAndCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91C07D2920391107008146A1 /* MapsAndCoreData.xcdatamodeld */; };
 		91C07D2D20391107008146A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91C07D2C20391107008146A1 /* Assets.xcassets */; };
 		91C07D3020391107008146A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91C07D2E20391107008146A1 /* LaunchScreen.storyboard */; };
+		91C07D3820391589008146A1 /* LocalizationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C07D3720391589008146A1 /* LocalizationListViewController.swift */; };
+		91C07D3B203D2DDB008146A1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91C07D3A203D2DDB008146A1 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		91C07D2C20391107008146A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91C07D2F20391107008146A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		91C07D3120391107008146A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		91C07D3720391589008146A1 /* LocalizationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationListViewController.swift; sourceTree = "<group>"; };
+		91C07D3A203D2DDB008146A1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91C07D3B203D2DDB008146A1 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,7 @@
 			children = (
 				91C07D2120391107008146A1 /* MapsAndCoreData */,
 				91C07D2020391107008146A1 /* Products */,
+				91C07D39203D2DDB008146A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				91C07D2220391107008146A1 /* AppDelegate.swift */,
+				91C07D3720391589008146A1 /* LocalizationListViewController.swift */,
 				91C07D2420391107008146A1 /* ViewController.swift */,
 				91C07D2620391107008146A1 /* Main.storyboard */,
 				91C07D2C20391107008146A1 /* Assets.xcassets */,
@@ -65,6 +72,14 @@
 				91C07D2920391107008146A1 /* MapsAndCoreData.xcdatamodeld */,
 			);
 			path = MapsAndCoreData;
+			sourceTree = "<group>";
+		};
+		91C07D39203D2DDB008146A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				91C07D3A203D2DDB008146A1 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +157,7 @@
 				91C07D2520391107008146A1 /* ViewController.swift in Sources */,
 				91C07D2320391107008146A1 /* AppDelegate.swift in Sources */,
 				91C07D2B20391107008146A1 /* MapsAndCoreData.xcdatamodeld in Sources */,
+				91C07D3820391589008146A1 /* LocalizationListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
