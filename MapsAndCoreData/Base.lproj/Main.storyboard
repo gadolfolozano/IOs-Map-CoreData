@@ -62,6 +62,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XHu-bx-5Jw">
                                 <rect key="frame" x="325" y="617" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="onSaveClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jKU-Ri-VQJ"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Comment" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T47-li-mn5">
                                 <rect key="frame" x="97.5" y="144" width="180" height="30"/>
@@ -101,6 +104,8 @@
                     </view>
                     <connections>
                         <outlet property="mMapView" destination="usx-3L-Nmy" id="OpJ-6O-qlb"/>
+                        <outlet property="mTxtComment" destination="T47-li-mn5" id="S7M-Jq-Tx6"/>
+                        <outlet property="mTxtName" destination="ABi-PE-rBF" id="ydH-Hm-kcm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
