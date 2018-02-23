@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
 
 class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet weak var mTxtName: UITextField!
@@ -17,10 +18,28 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
     @IBOutlet weak var mMapView: MKMapView!
     var mLocationManager = CLLocationManager()
     
+    var latitudeSelected = 0.0
+    var longitudeSelected = 0.0
+    
+    var selectedLocation : LocationModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         mMapView.delegate = self
+        
+        if let _ = selectedLocation {
+            mTxtName.text = selectedLocation?.name
+            mTxtComment.text = selectedLocation?.comment
+            
+            let annotation = MKPointAnnotation()
+            let coordinate = CLLocationCoordinate2D(latitude: (self.selectedLocation?.latitude)!, longitude: (self.selectedLocation?.longitude)!)
+            annotation.coordinate = coordinate
+            annotation.title = selectedLocation?.name
+            annotation.subtitle = selectedLocation?.comment
+            self.mMapView.addAnnotation(annotation)
+        }
+        
         
         //init localization manager
         mLocationManager.delegate = self
@@ -56,6 +75,9 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
             
             let touchedPoint = gestureRecognizer.location(in: self.mMapView)
             let chosenCoordinates = self.mMapView.convert(touchedPoint, toCoordinateFrom: self.mMapView)
+            
+            self.latitudeSelected = chosenCoordinates.latitude
+            self.longitudeSelected = chosenCoordinates.longitude
             
             let annotation = MKPointAnnotation()
             annotation.coordinate = chosenCoordinates
@@ -93,6 +115,7 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
         
     }
     
+    //Control go to maps, like an intent
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         let requestCLLocation = CLLocation()
@@ -124,8 +147,27 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 
     @IBAction func onSaveClick(_ sender: Any) {
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let newLocation = NSEntityDescription.insertNewObject(forEntityName: "Location", into: context)
+        
+        newLocation.setValue(mTxtName.text, forKey: "name")
+        newLocation.setValue(mTxtComment.text, forKey: "comment")
+        newLocation.setValue(self.latitudeSelected, forKey: "latitude")
+        newLocation.setValue(self.longitudeSelected, forKey: "longitude")
         
         
+        do {
+            try context.save()
+            print("we managed to save it")
+        } catch {
+            print("error")
+        }
+        
+        
+        self.mTxtComment.text = ""
+        self.mTxtComment.text = ""
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "newLocationCreated"), object: nil)
         _ = self.navigationController?.popViewController(animated: true)

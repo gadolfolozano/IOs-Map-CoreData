@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		912BFFAD203FA7190037C73D /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912BFFAC203FA7190037C73D /* LocationModel.swift */; };
 		91C07D2320391107008146A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C07D2220391107008146A1 /* AppDelegate.swift */; };
 		91C07D2520391107008146A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91C07D2420391107008146A1 /* ViewController.swift */; };
 		91C07D2820391107008146A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91C07D2620391107008146A1 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		912BFFAC203FA7190037C73D /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		91C07D1F20391107008146A1 /* MapsAndCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapsAndCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91C07D2220391107008146A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91C07D2420391107008146A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				91C07D2E20391107008146A1 /* LaunchScreen.storyboard */,
 				91C07D3120391107008146A1 /* Info.plist */,
 				91C07D2920391107008146A1 /* MapsAndCoreData.xcdatamodeld */,
+				912BFFAC203FA7190037C73D /* LocationModel.swift */,
 			);
 			path = MapsAndCoreData;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				91C07D2520391107008146A1 /* ViewController.swift in Sources */,
 				91C07D2320391107008146A1 /* AppDelegate.swift in Sources */,
 				91C07D2B20391107008146A1 /* MapsAndCoreData.xcdatamodeld in Sources */,
+				912BFFAD203FA7190037C73D /* LocationModel.swift in Sources */,
 				91C07D3820391589008146A1 /* LocalizationListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
